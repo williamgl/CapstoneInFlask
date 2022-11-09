@@ -36,17 +36,17 @@ def index():
 
 
 @app.route('/login')
-def customers():
+def login():
     return render_template("login.j2")
 
 
 @app.route('/signup')
-def inventory():
+def signup():
     return render_template("signup.j2")
 
 
 @app.route('/about')
-def orders():
+def about():
     return render_template("about.j2")
 
 
