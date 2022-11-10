@@ -1,8 +1,10 @@
 from flask import Flask, render_template, json
 import os
+from flask_bootstrap import Bootstrap
 import mysql.connector
 
 app = Flask(__name__)
+Bootstrap(app)
 
 """
 Use this database to connect AWS RDS
@@ -36,18 +38,23 @@ def index():
 
 
 @app.route('/login')
-def customers():
+def login():
     return render_template("login.j2")
 
 
 @app.route('/signup')
-def inventory():
+def signup():
     return render_template("signup.j2")
 
 
 @app.route('/about')
-def orders():
+def about():
     return render_template("about.j2")
+
+
+@app.route('/layout')
+def layout():
+    return render_template("layout.j2")
 
 
 # Listener
