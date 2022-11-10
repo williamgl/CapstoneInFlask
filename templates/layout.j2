@@ -1,6 +1,14 @@
 {% extends "bootstrap/base.html" %}
 
+{% block title %}
+    Monster Quiz
+{% endblock %}
+
 {% block navbar %}
   {% include "_navbar.j2" %}
 {% endblock %}
 
+{% block content %}
+  {% block sub_content %}
+  {% endblock %}
+{% endblock %}

@@ -1,35 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF=8">
-	<title>Monster Quiz</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+{% extends "layout.j2" %}
 
-<body>
-	<!-- Top navigation bar reference: https://www.w3schools.com/howto/howto_js_topnav.asp -->
-	<div class="topNav">
-	  <a class="active" href="index">Home</a>
-	  <a href="login">Log In</a>
-	  <a href="signup">Sign Up</a>
-	  <a href="about">About</a>
-	</div>
+# <!DOCTYPE html>
+# <html>
+# <head>
+# 	<meta charset="UTF=8">
+# 	<title>Monster Quiz</title>
+#     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+# </head>
 
-	<div>
-		<p></p>
-		<h1>Welcome to Monster Quiz!</h1>
-		<h3>Home</h3>
-        <p>This is the homepage of our project.</p>
-		<p>This is an online quiz creator like SurveyMonkey.</p>
-		<h3>Log In</h3>
-		<p>This page allows users to log in.</p>
-		<h3>Sign Up</h3>
-		<p>This is to allow users to create new account.</p>
-		<h3>About</h3>
-		<p>This is to check our website status.</p>
-		<p></p>
-	</div>
+# <body>
+# 	<!-- Top navigation bar reference: https://www.w3schools.com/howto/howto_js_topnav.asp -->
+# 	<div class="topNav">
+# 	  <a class="active" href="index">Home</a>
+# 	  <a href="login">Log In</a>
+# 	  <a href="signup">Sign Up</a>
+# 	  <a href="about">About</a>
+# 	</div>
+# 	<div>
 
-    [ <a href="index">Home</a> | <a href="login">Log In</a> | <a href="signup">Sign Up</a> | <a href="about">About</a> ]
-</body>
-</html>
+{% block sub_content %}
+	<h1> Home </h1>
+
+	<p></p>
+	<h1>Welcome to Monster Quiz!</h1>
+	<h3>Home</h3>
+	<p>This is the homepage of our project.</p>
+	<p>This is an online quiz creator like SurveyMonkey.</p>
+	<h3>Log In</h3>
+	<p>This page allows users to log in.</p>
+	<h3>Sign Up</h3>
+	<p>This is to allow users to create new account.</p>
+	<h3>About</h3>
+	<p>This is to check our website status.</p>
+	<p></p>
+{% endblock %}
+
+# </div>
+#     [ <a href="index">Home</a> | <a href="login">Log In</a> | <a href="signup">Sign Up</a> | <a href="about">About</a> ]
+# </body>
+# </html>
