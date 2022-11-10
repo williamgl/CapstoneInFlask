@@ -1,28 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF=8">
-	<title>Monster Quiz</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+{%extends "layout.j2" %}
 
-<body>
-	<!-- Top navigation bar reference: https://www.w3schools.com/howto/howto_js_topnav.asp -->
-	<div class="topNav">
-	  <a class="active" href="index">Home</a>
-	  <a href="login">Log In</a>
-	  <a href="signup">Sign Up</a>
-	  <a href="about">About</a>
-	</div>
+{% block sub_content %}
+<div class="text-center">
+  <h1> User Login </h1>
+</div>
+<form class="form-horizontal" method="POST">
 
-	<div>
-		<p></p>
-		<h3>Log In</h3>
-		<p>This page allows users to log in.</p>
-		<p>Details to be added.</p>
-		<p></p>
-	</div>
+  <div class="form-group">
+    <label class="control-label col-sm-2">Email</label>
+    <div class="col-sm-5">
+      <input type="text" name="email"/>
+    </div>
+  </div>
 
-    [ <a href="index">Home</a> | <a href="login">Log In</a> | <a href="signup">Sign Up</a> | <a href="about">About</a> ]
-</body>
-</html>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Password</label>
+      <div class="col-sm-5">
+        <input type="password" name="password"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="Submit" >Login </button>
+      </div>
+    </div>
+
+</form>
+{% endblock %}
