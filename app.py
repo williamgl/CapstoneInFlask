@@ -1,4 +1,4 @@
-from flask import Flask, render_template, json
+from flask import Flask, render_template, json, request, flash, redirect
 import os
 from flask_bootstrap import Bootstrap
 import mysql.connector
@@ -6,15 +6,15 @@ import mysql.connector
 app = Flask(__name__)
 Bootstrap(app)
 
-"""
-Use this database to connect AWS RDS
+
+# Use this database to connect AWS RDS
 my_db = mysql.connector.connect(
     host="quiz.c8sslkipdbis.us-west-2.rds.amazonaws.com",
     user="admin",
     password="database1",
     database="quiz"
 )
-"""
+app.config['SECRET_KEY'] = 'secret'
 
 """
 Use this database to connect your local database
@@ -42,8 +42,18 @@ def login():
     return render_template("login.j2")
 
 
-@app.route('/signup')
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    if request.method == 'POST':
+        userDetails = request.form
+        cur = my_db.cursor()
+        cur.execute("INSERT INTO users(username, password) " \
+                    "VALUES(%s,%s)", (userDetails['username'], userDetails['password']))
+        my_db.commit()
+        cur.close()
+        my_db.close()
+        flash('Registration successful! Please login.', 'success')
+        return redirect('/login')
     return render_template("signup.j2")
 
 
