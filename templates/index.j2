@@ -19,20 +19,24 @@
 # 	<div>
 
 {% block sub_content %}
-	<h1> Home </h1>
+	{% if session.login %}
+        <h1> Home </h1>
 
-	<p></p>
-	<h1>Welcome to Monster Quiz!</h1>
-	<h3>Home</h3>
-	<p>This is the homepage of our project.</p>
-	<p>This is an online quiz creator like SurveyMonkey.</p>
-	<h3>Log In</h3>
-	<p>This page allows users to log in.</p>
-	<h3>Sign Up</h3>
-	<p>This is to allow users to create new account.</p>
-	<h3>About</h3>
-	<p>This is to check our website status.</p>
-	<p></p>
+	{% else %}
+
+        <p></p>
+        <h1>Welcome to Monster Quiz!</h1>
+        <h3>Home</h3>
+        <p>This is the homepage of our project.</p>
+        <p>This is an online quiz creator like SurveyMonkey.</p>
+        <h3>Log In</h3>
+        <p>This page allows users to log in.</p>
+        <h3>Sign Up</h3>
+        <p>This is to allow users to create new account.</p>
+        <h3>About</h3>
+        <p>This is to check our website status.</p>
+        <p></p>
+    {% endif %}
 {% endblock %}
 
 # </div>
