@@ -6,8 +6,9 @@
 3. run ```source ./bin/activate``` or ```source ./venv/bin/activate``` to start the virtual environment (```deactivate``` to close)
 4. run ```pip3 install flask-mysqldb``` and ```pip3 install mysql``` to install database packages
 5. run ```pip3 install flask``` and ```pip3 install mysql-connector```
-6. install all packages in requirements.txt
-7. run ```python3 app.py``` to view current result.
+6. run ```pip3 install flask-bootstrap```
+7. install all packages in requirements.txt
+8. run ```python3 app.py``` to view current result.
 
 
 
