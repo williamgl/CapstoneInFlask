@@ -77,9 +77,17 @@ def about():
     return render_template("about.j2")
 
 
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash("You have been logged out", 'info')
+    return redirect('/')
+
+# will delete later
 @app.route('/layout')
 def layout():
     return render_template("layout.j2")
+
 
 
 # Listener
