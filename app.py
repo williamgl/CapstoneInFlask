@@ -43,7 +43,7 @@ def login():
         userDetails = request.form
         username = userDetails['username']
         cur = my_db.cursor(dictionary=True)
-        cur.execute("SELECT * FROM users WHERE username = %s" % (username, ))
+        cur.execute("SELECT * FROM users WHERE username='%s';" % (username, ))
         user = cur.fetchone()
         if userDetails['password'] == user['password']:
             session['login'] = True
@@ -207,10 +207,11 @@ def delete_question(question_id):
     return redirect("/view-quiz/%s" % (session['quiz_id'],))
 
 
+"""
 @app.route('/test')
 def test():
     return render_template("template.j2")
-
+"""
 
 # Listener
 if __name__ == "__main__":
