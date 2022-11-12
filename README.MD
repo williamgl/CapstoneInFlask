@@ -27,7 +27,7 @@
 1. upload everything on the server
 2. run ```pip3 install gunicorn```
 3. run ```pip3 install mysql-connector```
-4. run ```gunicorn -b 0.0.0.0:28571 -D app:app```
+4. run ```gunicorn -b 0.0.0.0:28572 -D app:app```
 
 
 ### To view my current result
