@@ -32,4 +32,4 @@
 
 ### To view my current result
 1. connect OSU VPN
-2. access website: http://flip1.engr.oregonstate.edu:28571/
+2. access website: http://flip1.engr.oregonstate.edu:28572/
