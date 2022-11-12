@@ -1,45 +1,32 @@
 {% extends "layout.j2" %}
 
-# <!DOCTYPE html>
-# <html>
-# <head>
-# 	<meta charset="UTF=8">
-# 	<title>Monster Quiz</title>
-#     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-# </head>
-
-# <body>
-# 	<!-- Top navigation bar reference: https://www.w3schools.com/howto/howto_js_topnav.asp -->
-# 	<div class="topNav">
-# 	  <a class="active" href="index">Home</a>
-# 	  <a href="login">Log In</a>
-# 	  <a href="signup">Sign Up</a>
-# 	  <a href="about">About</a>
-# 	</div>
-# 	<div>
-
 {% block sub_content %}
 	{% if session.login %}
-        <h1> Home </h1>
+        <h1>&ensp;Welcome, {{ session.username }}!</h1>
+        <br>
+        <h3>&emsp;This is your account page.</h3>
+        <p>&emsp;&emsp;Currently, this is just a welcome page.</p>
+        <p>&emsp;&emsp;Please create new quizzes using the "Create a New Quiz" button at the top navigation bar.</p>
+        <p>&emsp;&emsp;(This user story is still in implementation.) You may create unique link and send email to candidates to take after creating a new quiz.</p>
+        <p>&emsp;&emsp;Please click on the "View My Quizzes" button to view your saved quizzes.</p>
+        <p>&emsp;&emsp;(This user story is still in implementation.) You may add candidates emails and then create unique links for your saved quizzes.</p>
+        <p>&emsp;&emsp;Please click on the "Log Out" button to log out when you finished using Monster Quiz.</p>
 
 	{% else %}
 
         <p></p>
-        <h1>Welcome to Monster Quiz!</h1>
-        <h3>Home</h3>
-        <p>This is the homepage of our project.</p>
-        <p>This is an online quiz creator like SurveyMonkey.</p>
-        <h3>Log In</h3>
-        <p>This page allows users to log in.</p>
-        <h3>Sign Up</h3>
-        <p>This is to allow users to create new account.</p>
-        <h3>About</h3>
-        <p>This is to check our website status.</p>
+        <h1>&ensp;Welcome to Monster Quiz!</h1>
+        <h3>&emsp;Home</h3>
+        <p>&emsp;&emsp;This is the homepage of our project.</p>
+        <p>&emsp;&emsp;This is an online quiz creator like SurveyMonkey.</p>
+        <h3>&emsp;Log In</h3>
+        <p>&emsp;&emsp;Please click on the "Login" button at the top right corner.</p>
+        <p>&emsp;&emsp;This Login page allows users to log in.</p>
+        <h3>&emsp;Sign Up</h3>
+        <p>&emsp;&emsp;Please click on "Create a New Account" button at the top right corner.</p>
+        <p>&emsp;&emsp;This page will allow users to create new account.</p>
+        <h3>&emsp;About</h3>
+        <p>&emsp;&emsp;This is to check our website status.</p>
         <p></p>
     {% endif %}
 {% endblock %}
-
-# </div>
-#     [ <a href="index">Home</a> | <a href="login">Log In</a> | <a href="signup">Sign Up</a> | <a href="about">About</a> ]
-# </body>
-# </html>

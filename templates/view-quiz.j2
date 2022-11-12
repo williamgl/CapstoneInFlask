@@ -1,0 +1,33 @@
+{% extends "layout.j2" %}
+{% block sub_content %}
+    <div class="text-center">
+      <h1> Questions in the Selected Quiz </h1>
+    </div>
+	<div id="browse" class="text-center">
+
+        <p><a href="/add-question"">Add New Question</a> </p>
+        <p></p>
+
+    <table border="1" cellpadding="5">
+        {% if questions %}
+		<thead>
+			<tr>
+                {% for key in questions[0].keys() %}
+                <th scope="col" data-field="{{ key }}" data-filter-control="input">{{ key }}</th>
+                {% endfor %}
+            </tr>
+		<tbody>
+		    {% for item in questions %}
+			<tr>
+			    {% for key in item.keys() %}
+			    <td> {{item[key]}} </td>
+                {% endfor %}
+			    <td><a href="/delete-question/{{item.question_id}}" class="btn btn-default">Delete Quiz</a></td>
+			</tr>
+                {% endfor %}
+        {% endif %}
+    </table>
+    <p>&nbsp;</p>
+    </div> <!-- browse -->
+
+{% endblock %}

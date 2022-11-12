@@ -1,0 +1,81 @@
+{% extends "layout.j2" %}
+{% block sub_content %}
+    <div class="text-center">
+      <h1> Add New Question </h1>
+    </div>
+
+    <form class="form-horizontal" method="POST">
+
+        <div class="form-group">
+          <label class="control-label col-sm-4">Question Description</label>
+          <div class="col-sm-5">
+            <input type="text" name="question"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4">Score</label>
+          <div class="col-sm-5">
+            <input type="text" name="score"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="control-label col-sm-4">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Question Type: </label>
+
+			<select id="question_type_id" name="question_type_id">
+				<option value="0">&nbsp;</option>
+				<option value="1">Multiple Choice</option>
+				<option value="2">True/False</option>
+				<option value="3">Free-form Answer</option>
+			</select>
+
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4">Choice A</label>
+          <div class="col-sm-5">
+            <input type="text" name="choice1"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4">Choice B</label>
+          <div class="col-sm-5">
+            <input type="text" name="choice2"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4">Choice C</label>
+          <div class="col-sm-5">
+            <input type="text" name="choice3"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4">Choice D</label>
+          <div class="col-sm-5">
+            <input type="text" name="choice4"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4">Correct Answer (Must Match One Choice Unless Free-from Question)</label>
+          <div class="col-sm-5">
+            <input type="text" name="answer"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-5">
+          <button type="Submit" >Create</button>
+        </div>
+
+      </div>
+        <br>
+        <p>&emsp;&emsp;&emsp;&emsp;Finsh adding the last question?</p>
+        <a href="generate">(Still in implementation) Generate link for candidate!</a>
+        </div>
+    </form>
+{% endblock %}

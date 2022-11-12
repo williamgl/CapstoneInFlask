@@ -1,0 +1,35 @@
+{% extends "layout.j2" %}
+{% block sub_content %}
+    <div class="text-center">
+      <h1> My Quiz List </h1>
+    </div>
+	<div id="browse" class="text-center">
+
+        <p><a href="create-quiz"">Add New Quiz</a> </p>
+        <p></p>
+
+    <table border="1" cellpadding="5">
+        {% if quiz %}
+		<thead>
+			<tr>
+                {% for key in quiz[0].keys() %}
+                <th scope="col" data-field="{{ key }}" data-filter-control="input">{{ key }}</th>
+                {% endfor %}
+            </tr>
+		<tbody>
+		    {% for item in quiz %}
+			<tr>
+			    {% for key in item.keys() %}
+			    <td> {{item[key]}} </td>
+                {% endfor %}
+			    <td><a href="view-quiz/{{item.quiz_id}}" class="btn btn-default">View Quiz</a></td>
+			    <td><a href="generate/" class="btn btn-default">(Still in implementation) Add Candidate and Generate Link</a></td>
+			    <td><a href="delete-quiz/{{item.quiz_id}}" class="btn btn-default">Delete Quiz</a></td>
+			</tr>
+                {% endfor %}
+        {% endif %}
+    </table>
+    <p>&nbsp;</p>
+    </div> <!-- browse -->
+
+{% endblock %}
