@@ -76,6 +76,7 @@ def signup():
 
         cur.execute("INSERT INTO users(username, password) " 
                     "VALUES('%s', '%s')" % (username, password))
+
         my_db.commit()
         cur.close()
         flash('Registration successful! Please login.', 'success')
