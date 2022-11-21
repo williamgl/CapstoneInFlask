@@ -1,7 +1,16 @@
 {% extends "layout.j2" %}
 {% block sub_content %}
+    <html>
+    <head>
+        <style>
+        body
+        {
+        background-image:url({{url_for('static',filename='background3.jpg')}})
+        }
+        </style>
+    </head>
 	<p></p>
-	<h3>&emsp;About</h3>
+	<h3 >&emsp;About</h3>
 	<p>&emsp;&emsp;Current Version: 1.0</p>
 	<br>
 	<p>&emsp;&emsp;Monster quiz is a capstone project designed for our schoolwork.</p>
@@ -12,4 +21,5 @@
 	<p>&emsp;&emsp;&emsp;&emsp;&emsp;Zhaowei Si</p>
 	<p>&emsp;&emsp;&emsp;&emsp;&emsp;Ruosha Pang</p>
 	<p>&emsp;&emsp;&emsp;&emsp;&emsp;Gan Li</p>
+    </html>
 {% endblock %}
