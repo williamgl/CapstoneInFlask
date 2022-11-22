@@ -2,6 +2,14 @@
 
 {% block sub_content %}
 	{% if session.login %}
+	    <head>
+            <style>
+            body
+            {
+            background-image:url({{url_for('static',filename='background4.jpg')}})
+            }
+            </style>
+        </head>
         <h1>&ensp;Welcome, {{ session.username }}!</h1>
         <br>
         <h3>&emsp;This is your account page.</h3>
@@ -13,7 +21,14 @@
         <p>&emsp;&emsp;Please click on the "Log Out" button to log out when you finished using Monster Quiz.</p>
 
 	{% else %}
-
+        <head>
+            <style>
+            body
+            {
+            background-image:url({{url_for('static',filename='background3.jpg')}})
+            }
+            </style>
+        </head>
         <p></p>
         <h1>&ensp;Welcome to Monster Quiz!</h1>
         <h3>&emsp;Home</h3>
