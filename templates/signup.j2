@@ -1,5 +1,16 @@
 {% extends "layout.j2" %}
 {% block sub_content %}
+<head>
+    <style>
+    body
+    {
+    background-image:url({{url_for('static',filename='background8.png')}});
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover
+    }
+    </style>
+</head>
 <div class="text-center">
   <h1> User Registration </h1>
 </div>

@@ -1,25 +1,54 @@
 {% extends "layout.j2" %}
 {% block sub_content %}
     <html>
-    <head>
-        <style>
-        body
-        {
-        background-image:url({{url_for('static',filename='background3.jpg')}})
-        }
-        </style>
-    </head>
-	<p></p>
-	<h3 style="color:  #C0C0C0;">&emsp;About</h3>
-	<p style="color:  #C0C0C0;">&emsp;&emsp;Current Version: 1.0</p>
-	<br>
-	<p style="color:  #C0C0C0;">&emsp;&emsp;Monster quiz is a capstone project designed for our schoolwork.</p>
-	<p style="color:  #C0C0C0;">&emsp;&emsp;School: Oregon State University</p>
-	<p style="color:  #C0C0C0;">&emsp;&emsp;Course: CS 467</p>
-	<p style="color:  #C0C0C0;">&emsp;&emsp;Team: West Coast App Monsters</p>
-	<p style="color:  #C0C0C0;">&emsp;&emsp;Team Member: </p>
-	<p style="color:  #C0C0C0;">&emsp;&emsp;&emsp;&emsp;&emsp;Zhaowei Si</p>
-	<p style="color:  #C0C0C0;">&emsp;&emsp;&emsp;&emsp;&emsp;Ruosha Pang</p>
-	<p style="color:  #C0C0C0;">&emsp;&emsp;&emsp;&emsp;&emsp;Gan Li</p>
+    {% if session.login %}
+        <head>
+            <style>
+            body
+            {
+            background-image:url({{url_for('static',filename='background4.png')}});
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover
+            }
+            </style>
+        </head>
+        <p></p>
+        <h3 style="color:  #94ffff;">&emsp;About</h3>
+        <p style="color:  #adffff;">&emsp;&emsp;Current Version: 1.0</p>
+        <br>
+        <p style="color:  #c7ffff;">&emsp;&emsp;Monster quiz is a capstone project designed for our schoolwork.</p>
+        <p style="color:  #c7ffff;">&emsp;&emsp;School: Oregon State University</p>
+        <p style="color:  #c7ffff;">&emsp;&emsp;Course: CS 467</p>
+        <p style="color:  #c7ffff;">&emsp;&emsp;Team: West Coast App Monsters</p>
+        <p style="color:  #c7ffff;">&emsp;&emsp;Team Member: </p>
+        <p style="color:  #c7ffff;">&emsp;&emsp;&emsp;&emsp;&emsp;Zhaowei Si</p>
+        <p style="color:  #c7ffff;">&emsp;&emsp;&emsp;&emsp;&emsp;Ruosha Pang</p>
+        <p style="color:  #c7ffff;">&emsp;&emsp;&emsp;&emsp;&emsp;Gan Li</p>
+    {% else %}
+        <head>
+            <style>
+            body
+            {
+            background-image:url({{url_for('static',filename='background3.png')}});
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover
+            }
+            </style>
+        </head>
+        <p></p>
+        <h3 style="color:  #FFFFFF;">&emsp;About</h3>
+        <p style="color:  #FFFFFF;">&emsp;&emsp;Current Version: 1.0</p>
+        <br>
+        <p style="color:  #FFFFFF;">&emsp;&emsp;Monster quiz is a capstone project designed for our schoolwork.</p>
+        <p style="color:  #FFFFFF;">&emsp;&emsp;School: Oregon State University</p>
+        <p style="color:  #FFFFFF;">&emsp;&emsp;Course: CS 467</p>
+        <p style="color:  #FFFFFF;">&emsp;&emsp;Team: West Coast App Monsters</p>
+        <p style="color:  #FFFFFF;">&emsp;&emsp;Team Member: </p>
+        <p style="color:  #FFFFFF;">&emsp;&emsp;&emsp;&emsp;&emsp;Zhaowei Si</p>
+        <p style="color:  #FFFFFF;">&emsp;&emsp;&emsp;&emsp;&emsp;Ruosha Pang</p>
+        <p style="color:  #FFFFFF;">&emsp;&emsp;&emsp;&emsp;&emsp;Gan Li</p>
+	{% endif %}
     </html>
 {% endblock %}
