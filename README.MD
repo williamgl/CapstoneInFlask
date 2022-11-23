@@ -7,9 +7,9 @@
 4. run ```pip3 install flask-mysqldb``` and ```pip3 install mysql``` to install database packages
 5. run ```pip3 install flask``` and ```pip3 install mysql-connector```
 6. run ```pip3 install flask-bootstrap```
-7. install all packages in requirements.txt
+7. install all packages in requirements.txt ```python -m pip install -r requirements.txt```
 8. run ```python3 app.py``` to view current result.
-
+9. ** make sure you installed mysql ```brew install mysql```
 
 
 ### Database

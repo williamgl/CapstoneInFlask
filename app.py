@@ -2,9 +2,12 @@ from flask import Flask, render_template, json, request, flash, redirect, sessio
 import os
 from flask_bootstrap import Bootstrap
 import mysql.connector
+from flask import Flask, render_template, request
+from flask_mail import Mail, Message
 
 app = Flask(__name__)
 Bootstrap(app)
+mail = Mail(app)
 
 
 # Use this database to connect AWS RDS
@@ -15,6 +18,19 @@ my_db = mysql.connector.connect(
     database="quiz"
 )
 app.config['SECRET_KEY'] = 'secret'
+
+# Sending Email
+"""
+Use this email address and password to send survey
+email address = WestCoastAppMonsters@gmail.com
+email password = OSUcs467!
+"""
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'WestCoastAppMonsters@gmail.com'
+app.config['MAIL_PASSWORD'] = 'OSUcs467!'
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
 
 """
 Use this database to connect your local database
@@ -207,6 +223,35 @@ def delete_question(question_id):
     cur.close()
     return redirect("/view-quiz/%s" % (session['quiz_id'],))
 
+
+"""
+*************************************
+**********NEED TO BE FIXED***********
+*************************************
+? URL path????
+? render which page and redirected from which page???
+|||||||||||||||||||||||||||||||||||||
+"""
+
+
+@app.route("/send-survey")
+def index():
+    return render_template("form.html")
+
+
+@app.route("/result", methods=['POST', 'GET'])
+def result():
+    if request.method == "POST":
+        msg = Message(request.form.get("Subject"), sender='WestCoastAppMonsters@gmail.com', recipients=[request.form.get("Email")])
+        msg.body = "You are invited to do the survey!"
+        mail.send(msg)
+        return render_template("result.html", result="Success!")
+    else:
+        return render_template("result.html", result="Failure.")
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 """
 @app.route('/test')
