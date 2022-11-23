@@ -2,31 +2,52 @@
 
 {% block sub_content %}
 	{% if session.login %}
-        <h1>&ensp;Welcome, {{ session.username }}!</h1>
+	    <head>
+            <style>
+            body
+            {
+            background-image:url({{url_for('static',filename='background4.png')}});
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover
+            }
+            </style>
+        </head>
+        <h1 style="color:  #94ffff;">&ensp;Welcome, {{ session.username }}!</h1>
         <br>
-        <h3>&emsp;This is your account page.</h3>
-        <p>&emsp;&emsp;Currently, this is just a welcome page.</p>
-        <p>&emsp;&emsp;Please create new quizzes using the "Create a New Quiz" button at the top navigation bar.</p>
-        <p>&emsp;&emsp;(This user story is still in implementation.) You may create unique link and send email to candidates to take after creating a new quiz.</p>
-        <p>&emsp;&emsp;Please click on the "View My Quizzes" button to view your saved quizzes.</p>
-        <p>&emsp;&emsp;(This user story is still in implementation.) You may add candidates emails and then create unique links for your saved quizzes.</p>
-        <p>&emsp;&emsp;Please click on the "Log Out" button to log out when you finished using Monster Quiz.</p>
+        <h3 style="color:  #adffff;">&emsp;This is your account page.</h3>
+        <p style="color:  #c7ffff;">&emsp;&emsp;Currently, this is just a welcome page.</p>
+        <p style="color:  #c7ffff;">&emsp;&emsp;Please create new quizzes using the "Create a New Quiz" button at the top navigation bar.</p>
+        <p style="color:  #c7ffff;">&emsp;&emsp;(This user story is still in implementation.) You may create unique link and send email to candidates to take after creating a new quiz.</p>
+        <p style="color:  #c7ffff;">&emsp;&emsp;Please click on the "View My Quizzes" button to view your saved quizzes.</p>
+        <p style="color:  #c7ffff;">&emsp;&emsp;(This user story is still in implementation.) You may add candidates emails and then create unique links for your saved quizzes.</p>
+        <p style="color:  #c7ffff;">&emsp;&emsp;Please click on the "Log Out" button to log out when you finished using Monster Quiz.</p>
 
 	{% else %}
-
-        <p></p>
-        <h1>&ensp;Welcome to Monster Quiz!</h1>
-        <h3>&emsp;Home</h3>
-        <p>&emsp;&emsp;This is the homepage of our project.</p>
-        <p>&emsp;&emsp;This is an online quiz creator like SurveyMonkey.</p>
-        <h3>&emsp;Log In</h3>
-        <p>&emsp;&emsp;Please click on the "Login" button at the top right corner.</p>
-        <p>&emsp;&emsp;This Login page allows users to log in.</p>
-        <h3>&emsp;Sign Up</h3>
-        <p>&emsp;&emsp;Please click on "Create a New Account" button at the top right corner.</p>
-        <p>&emsp;&emsp;This page will allow users to create new account.</p>
-        <h3>&emsp;About</h3>
-        <p>&emsp;&emsp;This is to check our website status.</p>
+        <head>
+            <style>
+            body
+            {
+            background-image:url({{url_for('static',filename='background3.png')}});
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover
+            }
+            </style>
+        </head>
+        <h1 style="color:  #DCDCDC; text-align: center;">&ensp;Welcome to Monster Quiz!</h1>
+        <h3 style="color:  #DCDCDC; text-align: center;">&ensp;Get Answers with Quizzes</h3>
+        <h3 style="color:  #FFFFFF; text-align: center;">&emsp;Home</h3>
+        <p style="color:  #FFFFFF; text-align: center;">&emsp;&emsp;This is the homepage of our project.</p>
+        <p style="color:  #FFFFFF; text-align: center;">&emsp;&emsp;This is an online quiz creator like SurveyMonkey.</p>
+        <h3 style="color:  #FFFFFF; text-align: center;">&emsp;Log In</h3>
+        <p style="color:  #FFFFFF; text-align: center;">&emsp;&emsp;Please click on the "Login" button at the top right corner.</p>
+        <p style="color:  #FFFFFF; text-align: center;">&emsp;&emsp;This Login page allows users to log in.</p>
+        <h3 style="color:  #FFFFFF; text-align: center;">&emsp;Sign Up</h3>
+        <p style="color:  #FFFFFF; text-align: center;">&emsp;&emsp;Please click on "Create a New Account" button at the top right corner.</p>
+        <p style="color:  #FFFFFF; text-align: center;">&emsp;&emsp;This page will allow users to create new account.</p>
+        <h3 style="color:  #FFFFFF; text-align: center;">&emsp;About</h3>
+        <p style="color:  #FFFFFF; text-align: center;">&emsp;&emsp;This is to check our website status.</p>
         <p></p>
     {% endif %}
 {% endblock %}
